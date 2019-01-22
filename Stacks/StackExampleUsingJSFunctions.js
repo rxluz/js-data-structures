@@ -1,33 +1,22 @@
 const Stack = (() => {
-  let top = null;
-  let size = 0;
-
-  class Node {
-    constructor(data) {
-      this.data = data;
-      this.previous = null;
-    }
-  }
+  let items = [];
 
   class PublicStack {
-    push(data) {
-      const node = new Node(data);
-      node.previous = top;
-      top = node;
-      size++;
-    }
-
     peek() {
-      return top.data;
+      if (this.isEmpty()) throw new Error("Stack is empty");
+      const lastItemIndex = items.length - 1;
+
+      return items[lastItemIndex];
     }
 
     pop() {
-      const temp = top;
-      top = top.previous;
+      if (this.isEmpty()) throw new Error("Stack is empty");
 
-      size--;
+      return items.pop();
+    }
 
-      return temp;
+    push(data) {
+      items.push(data);
     }
 
     isEmpty() {
@@ -35,7 +24,7 @@ const Stack = (() => {
     }
 
     size() {
-      return size;
+      return items.length;
     }
   }
 

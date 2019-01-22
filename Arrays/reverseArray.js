@@ -14,4 +14,4 @@ const reverseArray = currentArray => {
 
 const animalsReversed = reverseArray(animals);
 
-console.log(animalsReversed);
+console.log(animalsReversed); // will return [ 'zebra', 'lion', 'snake', 'monkey', 'elephant' ]

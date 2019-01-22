@@ -15,23 +15,31 @@ const Stack = (() => {
       node.previous = top;
       top = node;
       size++;
-    }
 
-    peek() {
-      return top.data;
+      return this.top;
     }
 
     pop() {
+      if (this.isEmpty()) throw new Error("This stack is empty");
+
       const temp = top;
       top = top.previous;
-
       size--;
-
       return temp;
     }
 
+    peek() {
+      if (this.isEmpty()) throw new Error("This stack is empty");
+
+      return top.data;
+    }
+
     isEmpty() {
-      return this.size() === 0;
+      return size === 0;
+    }
+
+    clear() {
+      top = null;
     }
 
     size() {
@@ -43,16 +51,19 @@ const Stack = (() => {
 })();
 
 const myStack = new Stack();
-
+myStack.push("hellodd");
+myStack.push("hello new item");
+myStack.push("hello new other item");
 myStack.push("hello");
-myStack.push("its me");
-myStack.push("other important item");
-
-console.log(myStack.size(), " - current stack sizeˆ");
-console.log(myStack.peek(), " - current stack last item");
-
 myStack.pop();
 
-console.log(myStack.size(), " - current stack size");
-console.log(myStack.isEmpty(), " - checks is stack is empty");
-console.log(myStack.peek(), " - current stack last item");
+myStack.pop();
+myStack.pop();
+
+// const myOtherStack = Stack();
+
+// myOtherStack.setItsMe("hey hey hey");
+
+console.log(myStack.size());
+console.log(myStack.peek());
+// console.log(myStack.print());
