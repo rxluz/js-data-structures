@@ -1,58 +1,13 @@
-const Stack = (() => {
-  let top = null;
-  let size = 0;
-
-  class Node {
-    constructor(data) {
-      this.data = data;
-      this.previous = null;
-    }
+class Node {
+  constructor(data) {
+    this.data = data;
   }
+}
 
-  class PublicStack {
-    push(data) {
-      const node = new Node(data);
-      node.previous = top;
-      top = node;
-      size++;
-    }
+var top = new Node("hello");
 
-    peek() {
-      return top.data;
-    }
+var myTop = top;
 
-    pop() {
-      const temp = top;
-      top = top.previous;
+top.data = "its me";
 
-      size--;
-
-      return temp;
-    }
-
-    isEmpty() {
-      return this.size() === 0;
-    }
-
-    size() {
-      return size;
-    }
-  }
-
-  return PublicStack;
-})();
-
-const myStack = new Stack();
-
-myStack.push("hello");
-myStack.push("its me");
-myStack.push("other important item");
-
-console.log(myStack.size(), " - current stack sizeˆ");
-console.log(myStack.peek(), " - current stack last item");
-
-myStack.pop();
-
-console.log(myStack.size(), " - current stack size");
-console.log(myStack.isEmpty(), " - checks is stack is empty");
-console.log(myStack.peek(), " - current stack last item");
+console.log(myTop);

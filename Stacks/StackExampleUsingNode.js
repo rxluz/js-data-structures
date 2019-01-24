@@ -22,7 +22,7 @@ const Stack = (() => {
     pop() {
       if (this.isEmpty()) throw new Error("This stack is empty");
 
-      const temp = top;
+      const temp = Object.assign({}, top);
       top = top.previous;
       size--;
       return temp;
