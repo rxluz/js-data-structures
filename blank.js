@@ -1,13 +1,7 @@
-class Node {
-  constructor(data) {
-    this.data = data;
-  }
+let index = 0;
+
+let limit = 9;
+
+while (index++ < limit) {
+  console.log(index);
 }
-
-var top = new Node("hello");
-
-var myTop = top;
-
-top.data = "its me";
-
-console.log(myTop);

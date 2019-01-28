@@ -18,7 +18,7 @@ const Queue = (() => {
       items.shift();
     }
 
-    front() {
+    peek() {
       if (this.isEmpty()) {
         throw new Error("The queue is empty");
       }
@@ -47,22 +47,22 @@ myQueue.enqueue("fifth item");
 myQueue.enqueue("sixth item");
 myQueue.enqueue("seventh item");
 
-console.log(myQueue.front());
+console.log(myQueue.peek());
 console.log(myQueue.print());
 myQueue.dequeue();
 
-console.log(myQueue.front());
+console.log(myQueue.peek());
 myQueue.dequeue();
 console.log(myQueue.print());
 
-console.log(myQueue.front());
+console.log(myQueue.peek());
 console.log(myQueue.size());
 myQueue.dequeue();
 console.log(myQueue.print());
 
-console.log(myQueue.front());
+console.log(myQueue.peek());
 myQueue.dequeue();
 console.log(myQueue.print());
 
-console.log(myQueue.front());
+console.log(myQueue.peek());
 console.log(myQueue.size());
