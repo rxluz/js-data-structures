@@ -46,26 +46,26 @@ const LinkedList = (() => {
       if (position === 0) {
         newNode.next = head
         head = newNode
+      } else {
+        let previousNode = head
+        let nextNode = head.next
 
-        return true
+        let currentNode = head
+        let currentPosition = 0
+
+        while (currentPosition++ < position) {
+          previousNode = currentNode
+          nextNode = currentNode.next
+          currentNode = currentNode.next
+        }
+
+        previousNode.next = newNode
+        newNode.next = nextNode
       }
-
-      let previousNode = head
-      let nextNode = head.next
-
-      let currentNode = head
-      let currentPosition = 0
-
-      while (currentPosition++ < position) {
-        previousNode = currentNode
-        nextNode = currentNode.next
-        currentNode = currentNode.next
-      }
-
-      previousNode.next = newNode
-      newNode.next = nextNode
 
       length++
+
+      return true
     }
 
     remove(element) {
@@ -186,20 +186,18 @@ myLinkedList.append('last item')
 myLinkedList.insert(3, 'item before last item')
 console.log(myLinkedList.toString())
 
-// console.log(
-//   `position of hey: ${myLinkedList.indexOf("item before last item")}`,
-// );
+console.log(`position of hey: ${myLinkedList.indexOf('item before last item')}`)
 
-// // console.log(myLinkedList.removeAt(1));
-// console.log(myLinkedList.remove("item before last item"));
-// console.log(myLinkedList.remove("item before last item"));
-// console.log(myLinkedList.remove("hello"));
-
-// console.log(myLinkedList.print());
-
-// // console.log(myLinkedList.removeAt(0));
-
-// console.log(myLinkedList.print());
 // console.log(myLinkedList.removeAt(1));
+console.log(myLinkedList.remove('item before last item'))
+console.log(myLinkedList.remove('item before last item'))
+console.log(myLinkedList.remove('hello'))
 
-// console.log(myLinkedList.print());
+console.log(myLinkedList.toString())
+
+// console.log(myLinkedList.removeAt(0));
+
+console.log(myLinkedList.toString())
+console.log(myLinkedList.removeAt(1))
+
+console.log(myLinkedList.toString())
