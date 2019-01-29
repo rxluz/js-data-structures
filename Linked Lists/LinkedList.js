@@ -177,27 +177,27 @@ const LinkedList = (() => {
   return PublicLinkedList
 })()
 
-const myLinkedList = new LinkedList()
+// const myLinkedList = new LinkedList()
 
-myLinkedList.append('hello')
-myLinkedList.append('hey')
-myLinkedList.append('last item')
+// myLinkedList.append('hello')
+// myLinkedList.append('hey')
+// myLinkedList.append('last item')
 
-myLinkedList.insert(3, 'item before last item')
-console.log(myLinkedList.toString())
+// myLinkedList.insert(3, 'item before last item')
+// console.log(myLinkedList.toString())
 
-console.log(`position of hey: ${myLinkedList.indexOf('item before last item')}`)
+// console.log(`position of hey: ${myLinkedList.indexOf('item before last item')}`)
 
-// console.log(myLinkedList.removeAt(1));
-console.log(myLinkedList.remove('item before last item'))
-console.log(myLinkedList.remove('item before last item'))
-console.log(myLinkedList.remove('hello'))
+// // console.log(myLinkedList.removeAt(1));
+// console.log(myLinkedList.remove('item before last item'))
+// console.log(myLinkedList.remove('item before last item'))
+// console.log(myLinkedList.remove('hello'))
 
-console.log(myLinkedList.toString())
+// console.log(myLinkedList.toString())
 
-// console.log(myLinkedList.removeAt(0));
+// // console.log(myLinkedList.removeAt(0));
 
-console.log(myLinkedList.toString())
-console.log(myLinkedList.removeAt(1))
+// console.log(myLinkedList.toString())
+// console.log(myLinkedList.removeAt(1))
 
-console.log(myLinkedList.toString())
+// console.log(myLinkedList.toString())
