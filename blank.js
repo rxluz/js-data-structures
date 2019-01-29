@@ -1,7 +1,11 @@
-let index = 0;
+const animals = ['elephant', 'monkey', 'snake', 'lion']
 
-let limit = 9;
+const desiredPositionToRemove = 2
 
-while (index++ < limit) {
-  console.log(index);
+for (var index = desiredPositionToRemove; index < animals.length; index++) {
+  animals[index] = animals[index + 1]
 }
+
+animals.length = animals.length - 1
+
+console.log(animals) // will return [ 'elephant', 'monkey', 'lion' ]

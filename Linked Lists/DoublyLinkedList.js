@@ -1,4 +1,4 @@
-const DoublyLinkedList = (() => {
+function doublyLinkedList() {
   let head = null
   let tail = null
   let length = 0
@@ -233,17 +233,27 @@ const DoublyLinkedList = (() => {
     }
   }
 
-  return PublicLinkedList
-})()
+  return function() {
+    return PublicLinkedList
+  }
+}
 
-// const myLinkedList = new LinkedList()
+const myLinkedList = new doublyLinkedList()
 
-// myLinkedList.append('hello')
-// myLinkedList.append('hey')
-// myLinkedList.append('last item')
+myLinkedList.append('hello')
+myLinkedList.append('hey')
+myLinkedList.append('last item')
+console.log(myLinkedList.toString())
+
+const mySecondLinkedList = new doublyLinkedList()
+
+mySecondLinkedList.append('second')
+
+console.log(mySecondLinkedList.toString())
+
+// console.log(mySecondLinkedList.toString())
 
 // myLinkedList.insert(2, 'item before last item')
-// console.log(myLinkedList.toString())
 
 // myLinkedList.removeAt(3)
 
