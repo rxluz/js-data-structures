@@ -51,7 +51,7 @@ function Set() {
     }
 
     union(secondSet) {
-      const unionSet = new PublicSet()
+      const unionSet = new Set()
 
       const firstSetValues = this.values()
       const secondSetValues = secondSet.values()
@@ -68,26 +68,46 @@ function Set() {
     }
 
     intersection(secondSet) {
-      const intersectionSet = new PublicSet()
+      const intersectionSet = new Set()
 
       const firstSetValues = this.values()
       const secondSetValues = secondSet.values()
 
       firstSetValues.forEach(value => {
         if (secondSet.has(value)) {
-          console.log(value, 'first')
           intersectionSet.add(value)
         }
       })
 
       secondSetValues.forEach(value => {
         if (this.has(value)) {
-          console.log(value, 'second')
           intersectionSet.add(value)
         }
       })
 
       return intersectionSet
+    }
+
+    difference(secondSet) {
+      const differenceSet = new Set()
+
+      const firstSetValues = this.values()
+
+      firstSetValues.forEach(value => {
+        if (!secondSet.has(value)) {
+          differenceSet.add(value)
+        }
+      })
+
+      return differenceSet
+    }
+
+    subset(secondSet) {
+      if (secondSet.size() < this.size()) {
+        return false
+      }
+
+      return this.values().every(value => secondSet.has(value))
     }
   }
 
@@ -97,15 +117,20 @@ function Set() {
 const mySetABC = new Set()
 mySetABC.add('a')
 mySetABC.add('b')
-mySetABC.add('c')
+// mySetABC.add('c')
+// mySetABC.add('d')
+// mySetABC.add('e')
+// mySetABC.add('f')
 
 const mySetADEF = new Set()
 mySetADEF.add('a')
+mySetADEF.add('b')
 mySetADEF.add('d')
 mySetADEF.add('e')
 mySetADEF.add('f')
 
-console.log(mySetABC.values())
+// console.log(mySetADEF.values())
+console.log(mySetABC.subset(mySetADEF))
 
 // console.log(mySet.add('other thing'))
 // console.log(mySet.values())
