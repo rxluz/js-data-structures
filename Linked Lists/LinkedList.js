@@ -2,8 +2,8 @@ const LinkedList = (() => {
   let head = null
   let length = 0
 
-  class Node {
-    constructor(element) {
+  class Utils {
+    static node(element) {
       this.element = element
       this.next = null
     }
@@ -19,7 +19,7 @@ const LinkedList = (() => {
     }
 
     append(element) {
-      const newNode = new Node(element)
+      const newNode = Utils.node(element)
 
       if (this.isEmpty()) {
         head = newNode
@@ -41,7 +41,7 @@ const LinkedList = (() => {
         throw new Error('Invalid position')
       }
 
-      const newNode = new Node(element)
+      const newNode = Utils.node(element)
 
       if (position === 0) {
         newNode.next = head

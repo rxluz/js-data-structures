@@ -3,11 +3,13 @@ function doublyLinkedList() {
   let tail = null
   let length = 0
 
-  class Node {
-    constructor(element) {
-      this.element = element
-      this.prev = null
-      this.next = null
+  class Utils {
+    static node(element) {
+      return {
+        element,
+        prev: null,
+        next: null,
+      }
     }
   }
 
@@ -21,7 +23,7 @@ function doublyLinkedList() {
     }
 
     append(element) {
-      const newNode = new Node(element)
+      const newNode = Utils.node(element)
 
       if (this.isEmpty()) {
         //its means that this item will be the head and tail
@@ -50,7 +52,7 @@ function doublyLinkedList() {
         throw new Error('Invalid position')
       }
 
-      const newNode = new Node(element)
+      const newNode = Utils.node(element)
 
       if (position === 0) {
         // fist item
