@@ -273,7 +273,7 @@ myHashTable.put('ohlle', '6world')
 myHashTable.put('loleh', '7world')
 myHashTable.put('other item', '8value')
 console.log(myHashTable.size('other item1'))
-console.log(myHashTable.remove('other item'))
+myHashTable.remove('other item')
 console.log(myHashTable.size('other item1'))
 
 console.log(myHashTable.toString())

@@ -44,7 +44,6 @@ function HashTable() {
     }
 
     get(key) {
-
       let index = Utils.djb2(key)
 
       if (this.isEmpty() || table[index]) return undefined
